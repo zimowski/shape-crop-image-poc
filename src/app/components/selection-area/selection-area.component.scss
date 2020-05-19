@@ -1,0 +1,56 @@
+@keyframes dash {
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+
+.area {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__image {
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    &__handler {
+        z-index: 2;
+
+        width: 1px;
+        height: 1px;
+
+        border: 1px solid #000;
+        background: #fff;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__point {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        z-index: 3;
+        border-radius: 50%;
+    }
+
+    &__selection {
+        fill:#fff;
+        fill-opacity: 0.1;
+        stroke:#000;
+        stroke-width: 1;
+        stroke-dasharray: 2;
+        animation: dash 5s linear !important;
+    }
+}
+
+.ng-draggable {
+    cursor: grab;
+}

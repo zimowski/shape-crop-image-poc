@@ -1,0 +1,43 @@
+<div style="display: flex">
+
+  <div style="flex: 33%;">
+    <strong>Cutting area:</strong><br/>
+    <div class="area" style="border: 1px solid black;" #dragBounds [ngStyle]="{ 'background-image': 'url(' + source + ')',  'width.px': width, 'height.px': height }">
+      <img class="area__image" [src]="source" #image />
+      <div class="area__handler" [position]="initialCoordinates[0]" (movingOffset)="moveCuttingHandler(0, $event)" [bounds]="dragBounds" [inBounds]="true" ngDraggable>
+        <div class="area__point"></div>
+      </div>
+      <div class="area__handler" [position]="initialCoordinates[1]" (movingOffset)="moveCuttingHandler(1, $event)" [bounds]="dragBounds" [inBounds]="true" ngDraggable>
+        <div class="area__point"></div>
+      </div>
+      <div class="area__handler" [position]="initialCoordinates[2]" (movingOffset)="moveCuttingHandler(2, $event)" [bounds]="dragBounds" [inBounds]="true" ngDraggable>
+        <div class="area__point"></div>
+      </div>
+      <div class="area__handler" [position]="initialCoordinates[3]" (movingOffset)="moveCuttingHandler(3, $event)" [bounds]="dragBounds" [inBounds]="true" ngDraggable>
+        <div class="area__point"></div>
+      </div>
+       
+      <div style="position: absolute; left: 0; top: 0;">
+        <canvas #cuttingArea [width]="width" [height]="height"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex: 33%">
+    <strong>Cutted canvas:</strong><br/>
+  
+    <canvas #cuttedCanvas [width]="width" [height]="height" style="border: 1px solid black"></canvas>
+  </div>
+
+  <div style="flex: 33%">
+    <strong>Final output:</strong><br/>
+    <img #outputImage style="border: 1px solid black;" />
+  </div>
+</div>
+
+
+
+
+
+
+
