@@ -1,0 +1,1 @@
+# shape-crop-image-poc
